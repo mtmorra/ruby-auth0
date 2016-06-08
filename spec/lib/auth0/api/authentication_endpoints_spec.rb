@@ -76,9 +76,10 @@ describe Auth0::Api::AuthenticationEndpoints do
       expect(@instance).to receive(:post).with(
         '/passwordless/start',
         client_id: nil,
+        connection: 'email',
         email: 'test@test.com',
         send: 'link',
-        auth_params: {
+        authParams: {
           scope: 'scope',
           protocol: 'protocol'
         })
